@@ -34,6 +34,7 @@ public class PostStatusUpdate extends Activity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String statusMessage = s.toString();
                 Log.d(PostStatusUpdate.class.getName(), String.format("Text changed: \"%s\"", statusMessage));
+                int messageLength = s.length();
                 textViewRemainingCharacters.setText(String.valueOf(s.length()));
             }
 
