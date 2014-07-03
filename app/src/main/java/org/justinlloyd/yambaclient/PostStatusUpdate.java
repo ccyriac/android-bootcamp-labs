@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class PostStatusUpdate extends Activity {
@@ -33,4 +34,10 @@ public class PostStatusUpdate extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void buttonPostStatus(View v)
+    {
+
+    }
+    
 }
