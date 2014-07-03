@@ -36,7 +36,7 @@ public class PostStatusUpdate extends Activity {
                 Log.d(PostStatusUpdate.class.getName(), String.format("Text changed: \"%s\"", statusMessage));
                 int messageLength = s.length();
                 int charactersRemaining = 140 - messageLength;
-                textViewRemainingCharacters.setText(String.valueOf(s.length()));
+                textViewRemainingCharacters.setText(String.valueOf(charactersRemaining));
             }
 
             @Override
