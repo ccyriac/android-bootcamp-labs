@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class PostStatusUpdate extends Activity implements TextWatcher{
+public class PostStatusUpdate extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,22 @@ public class PostStatusUpdate extends Activity implements TextWatcher{
         setContentView(R.layout.activity_post_status_update);
 
         EditText editTextStatusMessage = (EditText)(findViewById(R.id.editTextStatusMessage));
-        editTextStatusMessage.addTextChangedListener(this);
+        editTextStatusMessage.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
 
@@ -47,18 +62,4 @@ public class PostStatusUpdate extends Activity implements TextWatcher{
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
     }
 
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        
-    }
-
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
-
-    }
 }
