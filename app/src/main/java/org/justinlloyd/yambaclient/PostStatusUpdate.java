@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class PostStatusUpdate extends Activity {
@@ -20,6 +21,7 @@ public class PostStatusUpdate extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_status_update);
 
+        TextView textRemainingCharacters = (TextView)(findViewById(R.id.textViewRemainingCharacters));
         editTextStatusMessage = (EditText)(findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.addTextChangedListener(new TextWatcher() {
             @Override
