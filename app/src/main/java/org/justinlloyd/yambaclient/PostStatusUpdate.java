@@ -15,13 +15,14 @@ import android.widget.TextView;
 public class PostStatusUpdate extends Activity {
 
     private EditText editTextStatusMessage;
+    private TextView textRemainingCharacters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_status_update);
 
-        TextView textRemainingCharacters = (TextView)(findViewById(R.id.textViewRemainingCharacters));
+        textRemainingCharacters = (TextView)(findViewById(R.id.textViewRemainingCharacters));
         editTextStatusMessage = (EditText)(findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.addTextChangedListener(new TextWatcher() {
             @Override
