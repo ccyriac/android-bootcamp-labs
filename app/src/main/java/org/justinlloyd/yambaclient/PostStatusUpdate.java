@@ -13,12 +13,14 @@ import android.widget.EditText;
 
 public class PostStatusUpdate extends Activity {
 
+    private EditText editTextStatusMessage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_status_update);
 
-        EditText editTextStatusMessage = (EditText)(findViewById(R.id.editTextStatusMessage));
+        editTextStatusMessage = (EditText)(findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
