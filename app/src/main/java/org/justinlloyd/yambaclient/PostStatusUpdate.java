@@ -23,9 +23,9 @@ public class PostStatusUpdate extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_status_update);
 
-        textViewRemainingCharacters = (TextView)(findViewById(R.id.textViewRemainingCharacters));
+        textViewRemainingCharacters = (TextView) (findViewById(R.id.textViewRemainingCharacters));
         maximumCharacters = getResources().getInteger(R.integer.maximumCharacters);
-        editTextStatusMessage = (EditText)(findViewById(R.id.editTextStatusMessage));
+        editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -68,8 +68,7 @@ public class PostStatusUpdate extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void buttonPostStatus(View v)
-    {
+    public void buttonPostStatus(View v) {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
     }
 
