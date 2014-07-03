@@ -33,6 +33,7 @@ public class PostStatusUpdate extends Activity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Log.d(PostStatusUpdate.class.getName(), "Text changed: \"" + s.toString() + "\"");
+                String statusMessage = s.toString();
             }
 
             @Override
