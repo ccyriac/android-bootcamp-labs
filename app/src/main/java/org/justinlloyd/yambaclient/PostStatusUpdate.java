@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 
 public class PostStatusUpdate extends Activity {
@@ -14,6 +15,8 @@ public class PostStatusUpdate extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_status_update);
+
+        EditText editTextStatusMessage = (EditText)(findViewById(R.id.editTextStatusMessage));
     }
 
 
