@@ -2,6 +2,8 @@ package org.justinlloyd.yambaclient;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class PostStatusUpdate extends Activity {
+public class PostStatusUpdate extends Activity implements TextWatcher{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,7 @@ public class PostStatusUpdate extends Activity {
         setContentView(R.layout.activity_post_status_update);
 
         EditText editTextStatusMessage = (EditText)(findViewById(R.id.editTextStatusMessage));
+        editTextStatusMessage.addTextChangedListener(this);
     }
 
 
@@ -44,4 +47,18 @@ public class PostStatusUpdate extends Activity {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
     }
 
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
 }
