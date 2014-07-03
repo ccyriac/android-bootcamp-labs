@@ -1,6 +1,7 @@
 package org.justinlloyd.yambaclient;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -42,6 +43,7 @@ public class PostStatusUpdate extends Activity {
                 Log.d(PostStatusUpdate.class.getName(), String.format("Text changed (%d characters remaining): \"%s\"", charactersRemaining, statusMessage));
                 if (charactersRemaining < 0) {
                     Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
+                    textViewRemainingCharacters.setTextColor(Color.RED);
                 }
             }
 
