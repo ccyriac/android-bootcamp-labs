@@ -30,10 +30,10 @@ public class PostStatusUpdate extends Activity {
 
         textViewRemainingCharacters = (TextView) (findViewById(R.id.textViewRemainingCharacters));
         defaultRemainingCharactersColor = textViewRemainingCharacters.getCurrentTextColor();
-        warningRemainingCharactersColor = getResources().getColor(R.color.warningColor);
-        errorRemainingCharactersColor = getResources().getColor(R.color.errorColor);
+        warningRemainingCharactersColor = getResources().getColor(R.color.warningMessageLengthColor);
+        errorRemainingCharactersColor = getResources().getColor(R.color.errorMessageLengthColor);
         maximumCharacters = getResources().getInteger(R.integer.maximumCharacters);
-        warningLength = getResources().getInteger(R.integer.warningLength);
+        warningLength = getResources().getInteger(R.integer.warningMessageLength);
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
         editTextStatusMessage.addTextChangedListener(new TextWatcher() {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="maximumCharacters">140</integer>
-    <integer name="warningLength">20</integer>
-    <color name="warningColor">#FF0</color>
-    <color name="errorColor">#FF0000</color>
+    <integer name="warningMessageLength">20</integer>
+    <color name="warningMessageLengthColor">#FF0</color>
+    <color name="errorMessageLengthColor">#FF0000</color>
 </resources>
