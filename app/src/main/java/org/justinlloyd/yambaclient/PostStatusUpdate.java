@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class PostStatusUpdate extends Activity {
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.addTextChangedListener(new StatusMessageWatcher());
         editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
+        Button buttonPostStatus = (Button)(findViewById(R.id.buttonPostStatus));
     }
 
 
