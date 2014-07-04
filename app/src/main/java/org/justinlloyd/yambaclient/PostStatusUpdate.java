@@ -60,6 +60,11 @@ public class PostStatusUpdate extends Activity {
             return;
         }
 
+        if (statusMessage.length()>maximumCharacters)
+        {
+            return;
+        }
+        
         YambaClient yc = new YambaClient("student", "password");
         try {
             yc.postStatus(statusMessage);
