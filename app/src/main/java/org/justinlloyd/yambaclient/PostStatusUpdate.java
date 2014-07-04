@@ -54,7 +54,7 @@ public class PostStatusUpdate extends Activity {
                 else if (charactersRemaining < warningLength)
                 {
                     Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
-                    textViewRemainingCharacters.setTextColor(Color.YELLOW);
+                    textViewRemainingCharacters.setTextColor(warningRemainingCharactersColor);
                 }
                 else
                 {
