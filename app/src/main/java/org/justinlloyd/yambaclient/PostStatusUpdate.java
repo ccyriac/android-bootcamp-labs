@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.marakana.android.yamba.clientlib.YambaClient;
+import com.marakana.android.yamba.clientlib.YambaClientException;
 
 
 public class PostStatusUpdate extends Activity {
@@ -52,7 +53,11 @@ public class PostStatusUpdate extends Activity {
     public void buttonPostStatus(View v) {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
         YambaClient yc = new YambaClient("student", "password");
-        yc.postStatus("Hello world!");
+        try {
+            yc.postStatus("Hello world!");
+        } catch (YambaClientException e) {
+            e.printStackTrace();
+        }
     }
 
     private class StatusMessageWatcher implements TextWatcher {
