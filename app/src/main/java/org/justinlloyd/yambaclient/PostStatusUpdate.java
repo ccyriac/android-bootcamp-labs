@@ -118,6 +118,7 @@ public class PostStatusUpdate extends Activity {
         }
 
         private boolean isValidStatusMessage(String msg) {
+            return true;
         }
     }
 }
