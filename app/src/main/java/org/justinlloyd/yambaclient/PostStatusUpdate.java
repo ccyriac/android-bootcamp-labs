@@ -35,35 +35,7 @@ public class PostStatusUpdate extends Activity {
         warningLength = getResources().getInteger(R.integer.warningMessageLength);
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
-        editTextStatusMessage.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String statusMessage = s.toString();
-                int messageLength = s.length();
-                int charactersRemaining = maximumCharacters - messageLength;
-                textViewRemainingCharacters.setText(String.valueOf(charactersRemaining));
-                Log.d(PostStatusUpdate.class.getName(), String.format("Text changed (%d characters remaining): \"%s\"", charactersRemaining, statusMessage));
-                if (charactersRemaining < 0) {
-                    Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
-                    textViewRemainingCharacters.setTextColor(errorRemainingCharactersColor);
-                } else if (charactersRemaining < warningLength) {
-                    Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
-                    textViewRemainingCharacters.setTextColor(warningRemainingCharactersColor);
-                } else {
-                    textViewRemainingCharacters.setTextColor(defaultRemainingCharactersColor);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+        editTextStatusMessage.addTextChangedListener(new StatusMessageWatcher());
     }
 
 
@@ -90,4 +62,33 @@ public class PostStatusUpdate extends Activity {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
     }
 
+    private class StatusMessageWatcher implements TextWatcher {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String statusMessage = s.toString();
+            int messageLength = s.length();
+            int charactersRemaining = maximumCharacters - messageLength;
+            textViewRemainingCharacters.setText(String.valueOf(charactersRemaining));
+            Log.d(PostStatusUpdate.class.getName(), String.format("Text changed (%d characters remaining): \"%s\"", charactersRemaining, statusMessage));
+            if (charactersRemaining < 0) {
+                Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
+                textViewRemainingCharacters.setTextColor(errorRemainingCharactersColor);
+            } else if (charactersRemaining < warningLength) {
+                Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
+                textViewRemainingCharacters.setTextColor(warningRemainingCharactersColor);
+            } else {
+                textViewRemainingCharacters.setTextColor(defaultRemainingCharactersColor);
+            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    }
 }
