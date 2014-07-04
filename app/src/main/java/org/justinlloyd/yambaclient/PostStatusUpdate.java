@@ -57,6 +57,7 @@ public class PostStatusUpdate extends Activity {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
         String statusMessage = editTextStatusMessage.getText().toString();
         if (statusMessage.isEmpty()) {
+            Log.d(PostStatusUpdate.class.getName(), "Will not post to Yamba service - status message is empty.");
             return;
         }
 
