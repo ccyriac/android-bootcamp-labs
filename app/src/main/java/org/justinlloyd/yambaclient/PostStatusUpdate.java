@@ -18,12 +18,14 @@ public class PostStatusUpdate extends Activity {
 
     private EditText editTextStatusMessage;
     private TextView textViewRemainingCharacters;
+    private int maximumCharacters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_status_update);
 
+        maximumCharacters = getResources().getInteger(R.integer.maximumCharacters);
         textViewRemainingCharacters = (TextView) (findViewById(R.id.textViewRemainingCharacters));
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
@@ -57,7 +59,7 @@ public class PostStatusUpdate extends Activity {
         {
             return;
         }
-        
+
         YambaClient yc = new YambaClient("student", "password");
         try {
             yc.postStatus(statusMessage);
@@ -70,7 +72,6 @@ public class PostStatusUpdate extends Activity {
         private int defaultRemainingCharactersColor = textViewRemainingCharacters.getCurrentTextColor();
         private int warningRemainingCharactersColor = getResources().getColor(R.color.warningMessageLengthColor);
         private int errorRemainingCharactersColor = getResources().getColor(R.color.errorMessageLengthColor);
-        private int maximumCharacters = getResources().getInteger(R.integer.maximumCharacters);
         private int warningLength = getResources().getInteger(R.integer.warningMessageLength);
 
         @Override
