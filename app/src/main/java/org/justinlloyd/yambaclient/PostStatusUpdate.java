@@ -61,6 +61,7 @@ public class PostStatusUpdate extends Activity {
         }
 
         if (statusMessage.length() > maximumCharacters) {
+            Log.d(PostStatusUpdate.class.getName(), "Will not post to Yamba service - status message is too long.");
             return;
         }
 
