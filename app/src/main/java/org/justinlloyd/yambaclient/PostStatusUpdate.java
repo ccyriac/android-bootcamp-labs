@@ -122,6 +122,10 @@ public class PostStatusUpdate extends Activity {
                 return false;
             }
 
+            if (msg.isEmpty()) {
+                return false;
+            }
+
             return true;
         }
     }
