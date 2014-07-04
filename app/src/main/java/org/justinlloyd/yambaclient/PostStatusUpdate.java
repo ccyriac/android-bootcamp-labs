@@ -19,6 +19,7 @@ public class PostStatusUpdate extends Activity {
     private TextView textViewRemainingCharacters;
     private int maximumCharacters;
     private int defaultRemainingCharactersColor;
+    private int warningLength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class PostStatusUpdate extends Activity {
         textViewRemainingCharacters = (TextView) (findViewById(R.id.textViewRemainingCharacters));
         defaultRemainingCharactersColor = textViewRemainingCharacters.getCurrentTextColor();
         maximumCharacters = getResources().getInteger(R.integer.maximumCharacters);
+        warningLength = getResources().getInteger(R.integer.warningLength);
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
         editTextStatusMessage.addTextChangedListener(new TextWatcher() {
