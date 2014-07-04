@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.marakana.android.yamba.clientlib.YambaClient;
 import com.marakana.android.yamba.clientlib.YambaClientException;
 
@@ -55,16 +56,14 @@ public class PostStatusUpdate extends Activity {
     public void buttonPostStatus(View v) {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
         String statusMessage = editTextStatusMessage.getText().toString();
-        if (statusMessage.isEmpty())
-        {
+        if (statusMessage.isEmpty()) {
             return;
         }
 
-        if (statusMessage.length()>maximumCharacters)
-        {
+        if (statusMessage.length() > maximumCharacters) {
             return;
         }
-        
+
         YambaClient yc = new YambaClient("student", "password");
         try {
             yc.postStatus(statusMessage);
