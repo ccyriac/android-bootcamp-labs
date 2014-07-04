@@ -30,8 +30,8 @@ public class PostStatusUpdate extends Activity {
         maximumCharacters = getResources().getInteger(R.integer.maximumCharacters);
         textViewRemainingCharacters = (TextView) (findViewById(R.id.textViewRemainingCharacters));
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
-        editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
         editTextStatusMessage.addTextChangedListener(new StatusMessageWatcher());
+        editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
     }
 
 
