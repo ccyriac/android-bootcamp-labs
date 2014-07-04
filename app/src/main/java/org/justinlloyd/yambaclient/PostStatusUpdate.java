@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.marakana.android.yamba.clientlib.YambaClient;
 import com.marakana.android.yamba.clientlib.YambaClientException;
@@ -58,6 +59,7 @@ public class PostStatusUpdate extends Activity {
         String statusMessage = editTextStatusMessage.getText().toString();
         if (statusMessage.isEmpty()) {
             Log.d(PostStatusUpdate.class.getName(), "Will not post to Yamba service - status message is empty.");
+            Toast.makeText(this, "Status message cannot be empty.", Toast.LENGTH_SHORT).show();
             return;
         }
 
