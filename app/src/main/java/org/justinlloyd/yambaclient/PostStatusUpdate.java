@@ -53,6 +53,11 @@ public class PostStatusUpdate extends Activity {
     public void buttonPostStatus(View v) {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
         String statusMessage = editTextStatusMessage.getText().toString();
+        if (statusMessage.isEmpty())
+        {
+            return;
+        }
+        
         YambaClient yc = new YambaClient("student", "password");
         try {
             yc.postStatus(statusMessage);
