@@ -2,4 +2,5 @@
 <resources>
     <integer name="maximumCharacters">140</integer>
     <integer name="warningLength">20</integer>
+    <color name="warningColor">#FF0</color>
 </resources>
