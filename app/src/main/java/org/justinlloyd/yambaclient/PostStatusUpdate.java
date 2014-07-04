@@ -54,7 +54,7 @@ public class PostStatusUpdate extends Activity {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
         YambaClient yc = new YambaClient("student", "password");
         try {
-            yc.postStatus("Hello world!");
+            yc.postStatus(editTextStatusMessage.getText().toString());
         } catch (YambaClientException e) {
             e.printStackTrace();
         }
