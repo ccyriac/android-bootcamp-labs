@@ -118,6 +118,10 @@ public class PostStatusUpdate extends Activity {
         }
 
         private boolean isValidStatusMessage(String msg) {
+            if (msg.length() > maximumCharacters) {
+                return false;
+            }
+
             return true;
         }
     }
