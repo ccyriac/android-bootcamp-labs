@@ -22,6 +22,7 @@ public class PostStatusUpdate extends Activity {
     private EditText editTextStatusMessage;
     private TextView textViewRemainingCharacters;
     private int maximumCharacters;
+    private Button buttonPostStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class PostStatusUpdate extends Activity {
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.addTextChangedListener(new StatusMessageWatcher());
         editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
-        Button buttonPostStatus = (Button)(findViewById(R.id.buttonPostStatus));
+        buttonPostStatus = (Button)(findViewById(R.id.buttonPostStatus));
     }
 
 
