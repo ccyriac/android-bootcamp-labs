@@ -20,6 +20,7 @@ public class PostStatusUpdate extends Activity {
     private int maximumCharacters;
     private int defaultRemainingCharactersColor;
     private int warningLength;
+    private int warningRemainingCharactersColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class PostStatusUpdate extends Activity {
 
         textViewRemainingCharacters = (TextView) (findViewById(R.id.textViewRemainingCharacters));
         defaultRemainingCharactersColor = textViewRemainingCharacters.getCurrentTextColor();
+        warningRemainingCharactersColor = getResources().getColor(R.color.warningColor);
         maximumCharacters = getResources().getInteger(R.integer.maximumCharacters);
         warningLength = getResources().getInteger(R.integer.warningLength);
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
