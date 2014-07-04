@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.marakana.android.yamba.clientlib.YambaClient;
 
 
 public class PostStatusUpdate extends Activity {
