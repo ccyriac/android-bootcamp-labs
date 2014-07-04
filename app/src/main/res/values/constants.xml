@@ -4,6 +4,6 @@
     <color name="warningColor">#FF0</color>
     <integer name="maximumCharacters">140</integer>
     <integer name="warningMessageLength">20</integer>
-    <color name="warningMessageLengthColor">#FF0</color>
+    <color name="warningMessageLengthColor">@color/warningColor</color>
     <color name="errorMessageLengthColor">@color/errorColor</color>
 </resources>
