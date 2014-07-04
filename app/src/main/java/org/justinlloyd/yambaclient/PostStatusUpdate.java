@@ -116,5 +116,8 @@ public class PostStatusUpdate extends Activity {
         public void afterTextChanged(Editable s) {
 
         }
+
+        private boolean isValidStatusMessage(String msg) {
+        }
     }
 }
