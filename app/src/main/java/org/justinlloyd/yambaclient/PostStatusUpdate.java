@@ -52,6 +52,7 @@ public class PostStatusUpdate extends Activity {
     public void buttonPostStatus(View v) {
         Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
         YambaClient yc = new YambaClient("student", "password");
+        yc.postStatus("Hello world!");
     }
 
     private class StatusMessageWatcher implements TextWatcher {
