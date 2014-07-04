@@ -51,7 +51,7 @@ public class PostStatusUpdate extends Activity {
                 Log.d(PostStatusUpdate.class.getName(), String.format("Text changed (%d characters remaining): \"%s\"", charactersRemaining, statusMessage));
                 if (charactersRemaining < 0) {
                     Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
-                    textViewRemainingCharacters.setTextColor(Color.RED);
+                    textViewRemainingCharacters.setTextColor(errorRemainingCharactersColor);
                 }
                 else if (charactersRemaining < warningLength)
                 {
