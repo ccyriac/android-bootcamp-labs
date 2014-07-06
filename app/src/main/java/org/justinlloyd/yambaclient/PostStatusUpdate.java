@@ -84,6 +84,7 @@ public class PostStatusUpdate extends Activity {
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         if ((networkInfo == null) || (!networkInfo.isConnected())) {
             Log.d(PostStatusUpdate.class.getName(), "Status message cannot be posted, no network connectivity.");
+            Toast.makeText(this, "No network connectivity.", Toast.LENGTH_SHORT).show();
             return;
         }
 
