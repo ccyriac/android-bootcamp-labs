@@ -77,6 +77,10 @@ public class PostStatusUpdate extends Activity {
             return;
         }
 
+        postStatusMessage(statusMessage);
+    }
+
+    private void postStatusMessage(String statusMessage) {
         YambaClient yc = new YambaClient("student", "password");
         try {
             yc.postStatus(statusMessage);
