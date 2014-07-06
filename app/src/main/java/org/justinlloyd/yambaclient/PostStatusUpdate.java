@@ -30,12 +30,12 @@ public class PostStatusUpdate extends Activity {
         setContentView(R.layout.activity_post_status_update);
 
         maximumCharacters = getResources().getInteger(R.integer.maximumCharacters);
+        buttonPostStatus = (Button) (findViewById(R.id.buttonPostStatus));
+        buttonPostStatus.setEnabled(false);
         textViewRemainingCharacters = (TextView) (findViewById(R.id.textViewRemainingCharacters));
         editTextStatusMessage = (EditText) (findViewById(R.id.editTextStatusMessage));
         editTextStatusMessage.addTextChangedListener(new StatusMessageWatcher());
         editTextStatusMessage.setText("You've got to know when to code it, know when to push to git, know when to load it up, know when to run.");
-        buttonPostStatus = (Button) (findViewById(R.id.buttonPostStatus));
-        buttonPostStatus.setEnabled(false);
     }
 
 
