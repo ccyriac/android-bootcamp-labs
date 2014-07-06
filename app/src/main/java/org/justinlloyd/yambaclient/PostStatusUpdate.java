@@ -23,6 +23,7 @@ import com.marakana.android.yamba.clientlib.YambaClientException;
 
 public class PostStatusUpdate extends Activity {
 
+    public static final String TAG = PostStatusUpdate.class.getName();
     private EditText editTextStatusMessage;
     private TextView textViewRemainingCharacters;
     private int maximumCharacters;
@@ -66,16 +67,16 @@ public class PostStatusUpdate extends Activity {
     }
 
     public void buttonPostStatus(View v) {
-        Log.d(PostStatusUpdate.class.getName(), "Clicked the Post Status button");
+        Log.d(TAG, "Clicked the Post Status button");
         String statusMessage = editTextStatusMessage.getText().toString();
         if (statusMessage.isEmpty()) {
-            Log.d(PostStatusUpdate.class.getName(), "Will not post to Yamba service - status message is empty.");
+            Log.d(TAG, "Will not post to Yamba service - status message is empty.");
             Toast.makeText(this, "Status message cannot be empty.", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (statusMessage.length() > maximumCharacters) {
-            Log.d(PostStatusUpdate.class.getName(), "Will not post to Yamba service - status message is too long.");
+            Log.d(TAG, "Will not post to Yamba service - status message is too long.");
             Toast.makeText(this, "Status message is too long.", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -83,7 +84,7 @@ public class PostStatusUpdate extends Activity {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         if ((networkInfo == null) || (!networkInfo.isConnected())) {
-            Log.d(PostStatusUpdate.class.getName(), "Status message cannot be posted, no network connectivity.");
+            Log.d(TAG, "Status message cannot be posted, no network connectivity.");
             Toast.makeText(this, "No network connectivity.", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -96,7 +97,7 @@ public class PostStatusUpdate extends Activity {
         try {
             yc.postStatus(statusMessage);
         } catch (YambaClientException e) {
-            Log.e(PostStatusUpdate.class.getName(), e.toString());
+            Log.e(TAG, e.toString());
         }
     }
 
@@ -117,12 +118,12 @@ public class PostStatusUpdate extends Activity {
             int messageLength = s.length();
             int charactersRemaining = maximumCharacters - messageLength;
             textViewRemainingCharacters.setText(String.valueOf(charactersRemaining));
-            Log.d(PostStatusUpdate.class.getName(), String.format("Text changed (%d characters remaining): \"%s\"", charactersRemaining, statusMessage));
+            Log.d(TAG, String.format("Text changed (%d characters remaining): \"%s\"", charactersRemaining, statusMessage));
             if (charactersRemaining < 0) {
-                Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
+                Log.d(TAG, String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
                 textViewRemainingCharacters.setTextColor(errorRemainingCharactersColor);
             } else if (charactersRemaining < warningLength) {
-                Log.d(PostStatusUpdate.class.getName(), String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
+                Log.d(TAG, String.format("Status message has %d more characters than permitted", Math.abs(charactersRemaining)));
                 textViewRemainingCharacters.setTextColor(warningRemainingCharactersColor);
             } else {
                 textViewRemainingCharacters.setTextColor(defaultRemainingCharactersColor);
