@@ -95,7 +95,10 @@ public class PostStatusUpdate extends Activity {
     private void postStatusMessage(String statusMessage) {
         YambaClient yc = new YambaClient("student", "password");
         try {
+            long startTime = System.currentTimeMillis();
             yc.postStatus(statusMessage);
+            long endTime = System.currentTimeMillis();
+            long totalTime = endTime - startTime;
         } catch (YambaClientException e) {
             Log.e(TAG, e.toString());
         }
