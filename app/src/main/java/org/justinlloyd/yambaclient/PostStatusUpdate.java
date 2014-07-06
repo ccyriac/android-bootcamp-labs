@@ -1,6 +1,9 @@
 package org.justinlloyd.yambaclient;
 
 import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Editable;
@@ -74,6 +77,12 @@ public class PostStatusUpdate extends Activity {
         if (statusMessage.length() > maximumCharacters) {
             Log.d(PostStatusUpdate.class.getName(), "Will not post to Yamba service - status message is too long.");
             Toast.makeText(this, "Status message is too long.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+        if ((networkInfo == null) || (!networkInfo.isConnected())) {
             return;
         }
 
