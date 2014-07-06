@@ -83,6 +83,7 @@ public class PostStatusUpdate extends Activity {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         if ((networkInfo == null) || (!networkInfo.isConnected())) {
+            Log.d(PostStatusUpdate.class.getName(), "Status message cannot be posted, no network connectivity.");
             return;
         }
 
