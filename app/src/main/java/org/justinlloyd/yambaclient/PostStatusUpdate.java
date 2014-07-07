@@ -93,25 +93,35 @@ public class PostStatusUpdate extends Activity {
     }
 
     private void postStatusMessage(final String statusMessage) {
+
         new Thread() {
-            public void run()
-            {
+            public void run() {
                 YambaClient yc = new YambaClient("student", "password");
                 try {
                     long startTime = System.currentTimeMillis();
                     yc.postStatus(statusMessage);
                     long endTime = System.currentTimeMillis();
-                    long totalTime = endTime - startTime;
+                    final long totalTime = endTime - startTime;
                     Log.d(TAG, String.format("Posted the status message in %d ms", totalTime));
+                    Runnable updateUIRunnable = new Runnable() {
+                        public void run() {
+                            String text = String.format(getResources().getString(R.string.time_to_post), totalTime);
+                            Toast.makeText(PostStatusUpdate.this, text, Toast.LENGTH_SHORT).show();
+                        }
+                    };
 
-                    String text = String.format(getResources().getString(R.string.time_to_post), totalTime);
-                    Toast.makeText(PostStatusUpdate.this, text, Toast.LENGTH_SHORT).show();
+                    PostStatusUpdate.this.runOnUiThread(updateUIRunnable);
                 } catch (YambaClientException e) {
                     Log.e(TAG, e.toString());
                 }
 
             }
-        }.run();
+        }.start();
+
+        Runnable runOnUIThread = new Runnable() {
+            public void run() {
+            }
+        };
     }
 
     private class StatusMessageWatcher implements TextWatcher {
