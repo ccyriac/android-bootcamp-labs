@@ -131,6 +131,7 @@ public class PostStatusUpdate extends Activity {
     }
 
     private class PostStatusTask extends AsyncTask<String, Void, Void> {
+        // runs on the UI thread prior to doInBackground
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -152,6 +153,7 @@ public class PostStatusUpdate extends Activity {
             return null;
         }
 
+        // runs on the UI thread after doInBackground has finished
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
