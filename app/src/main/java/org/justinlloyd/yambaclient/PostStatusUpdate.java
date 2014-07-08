@@ -138,7 +138,6 @@ public class PostStatusUpdate extends Activity {
 
         public PostStatusTask(Activity context) {
             this.context = context;
-            progress = ProgressDialog.show(context, "Posting", "Please wait...");
         }
 
         // runs on the UI thread prior to doInBackground
@@ -146,6 +145,7 @@ public class PostStatusUpdate extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(PostStatusTask.class.getName(), "onPreExecute");
+            progress = ProgressDialog.show(context, "Posting", "Please wait...");
         }
 
         @Override
