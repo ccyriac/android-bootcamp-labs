@@ -145,6 +145,13 @@ public class PostStatusUpdate extends Activity {
         };
     }
 
+    private class PostStatusTask extends AsyncTask<String, Void, Void> {
+        @Override
+        protected Void doInBackground(String... params) {
+            return null;
+        }
+    }
+
     private class StatusMessageWatcher implements TextWatcher {
         private int defaultRemainingCharactersColor = textViewRemainingCharacters.getCurrentTextColor();
         private int warningRemainingCharactersColor = getResources().getColor(R.color.warningMessageLengthColor);
