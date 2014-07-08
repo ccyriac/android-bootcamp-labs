@@ -101,7 +101,7 @@ public class PostStatusUpdate extends Activity {
                 try {
                     yc.postStatus("Hello world!");
                 } catch (YambaClientException e) {
-                    e.printStackTrace();
+                    Log.d(TAG, e.toString());
                 }
                 return null;
             }
