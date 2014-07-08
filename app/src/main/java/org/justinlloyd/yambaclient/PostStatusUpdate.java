@@ -94,9 +94,9 @@ public class PostStatusUpdate extends Activity {
     }
 
     private void postStatusMessageAsyncTask(String statusMessage) {
-        new AsyncTask<Void, Void, Void>() {
+        new AsyncTask<String, Void, Void>() {
             @Override
-            protected Void doInBackground(Void... params) {
+            protected Void doInBackground(String... params) {
                 YambaClient yc = new YambaClient("student", "password");
                 try {
                     long startTime = System.currentTimeMillis();
