@@ -146,6 +146,7 @@ public class PostStatusUpdate extends Activity {
             super.onPreExecute();
             Log.d(PostStatusTask.class.getName(), "onPreExecute");
             progress = ProgressDialog.show(context, "Posting", "Please wait...");
+            progress.setCancelable(true);
         }
 
         @Override
