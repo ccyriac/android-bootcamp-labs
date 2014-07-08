@@ -103,6 +103,7 @@ public class PostStatusUpdate extends Activity {
                     yc.postStatus("Hello world!");
                     long endTime = System.currentTimeMillis();
                     final long totalTime = endTime - startTime;
+                    Log.d(TAG, String.format("Posted the status message in %d ms", totalTime));
                 } catch (YambaClientException e) {
                     Log.d(TAG, e.toString());
                 }
