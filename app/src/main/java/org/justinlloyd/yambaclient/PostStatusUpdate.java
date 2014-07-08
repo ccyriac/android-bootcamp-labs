@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Editable;
@@ -93,9 +94,15 @@ public class PostStatusUpdate extends Activity {
     }
 
     private void postStatusMessageAsyncTask(String statusMessage) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                return null;
+            }
+        }.execute();
 
     }
-    
+
     private void postStatusMessageBackgroundThread(final String statusMessage) {
 
         new Thread() {
