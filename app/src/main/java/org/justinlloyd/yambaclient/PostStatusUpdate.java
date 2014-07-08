@@ -132,6 +132,10 @@ public class PostStatusUpdate extends Activity {
 
     private class PostStatusTask extends AsyncTask<String, Void, Void> {
         @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
         protected Void doInBackground(String... params) {
             YambaClient yc = new YambaClient("student", "password");
             try {
