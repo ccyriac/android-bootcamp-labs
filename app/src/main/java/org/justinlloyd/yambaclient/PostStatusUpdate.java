@@ -109,7 +109,7 @@ public class PostStatusUpdate extends Activity {
                 }
                 return null;
             }
-        }.execute();
+        }.execute(statusMessage);
 
     }
 
