@@ -94,7 +94,7 @@ public class PostStatusUpdate extends Activity {
     }
 
     private void postStatusMessageAsyncTask(String statusMessage) {
-        PostStatusTask postTask = new PostStatusTask();
+        PostStatusTask postTask = new PostStatusTask(this);
         postTask.execute(statusMessage);
     }
 
@@ -131,6 +131,11 @@ public class PostStatusUpdate extends Activity {
     }
 
     private class PostStatusTask extends AsyncTask<String, Void, Void> {
+
+        public PostStatusTask(Activity context) {
+
+        }
+
         // runs on the UI thread prior to doInBackground
         @Override
         protected void onPreExecute() {
