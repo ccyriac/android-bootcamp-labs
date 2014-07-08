@@ -132,8 +132,10 @@ public class PostStatusUpdate extends Activity {
 
     private class PostStatusTask extends AsyncTask<String, Void, Void> {
 
-        public PostStatusTask(Activity context) {
+        private final Activity context;
 
+        public PostStatusTask(Activity context) {
+            this.context = context;
         }
 
         // runs on the UI thread prior to doInBackground
