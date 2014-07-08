@@ -153,6 +153,7 @@ public class PostStatusUpdate extends Activity {
 
         @Override
         protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
         }
     }
 
