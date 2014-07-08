@@ -133,6 +133,7 @@ public class PostStatusUpdate extends Activity {
     private class PostStatusTask extends AsyncTask<String, Void, Void> {
         @Override
         protected void onPreExecute() {
+            super.onPreExecute();
             Log.d(PostStatusTask.class.getName(), "onPreExecute");
         }
 
