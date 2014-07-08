@@ -89,10 +89,10 @@ public class PostStatusUpdate extends Activity {
             return;
         }
 
-        postStatusMessage(statusMessage);
+        postStatusMessageBackgroundThread(statusMessage);
     }
 
-    private void postStatusMessage(final String statusMessage) {
+    private void postStatusMessageBackgroundThread(final String statusMessage) {
 
         new Thread() {
             public void run() {
