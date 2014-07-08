@@ -148,6 +148,16 @@ public class PostStatusUpdate extends Activity {
     private class PostStatusTask extends AsyncTask<String, Void, Void> {
         @Override
         protected Void doInBackground(String... params) {
+            YambaClient yc = new YambaClient("student", "password");
+            try {
+                long startTime = System.currentTimeMillis();
+                yc.postStatus("Hello world!");
+                long endTime = System.currentTimeMillis();
+                final long totalTime = endTime - startTime;
+                Log.d(TAG, String.format("Posted the status message in %d ms", totalTime));
+            } catch (YambaClientException e) {
+                Log.d(TAG, e.toString());
+            }
             return null;
         }
     }
