@@ -168,6 +168,7 @@ public class PostStatusUpdate extends Activity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             Log.d(PostStatusTask.class.getName(), "onPostExecute");
+            progress.dismiss();
         }
     }
 
