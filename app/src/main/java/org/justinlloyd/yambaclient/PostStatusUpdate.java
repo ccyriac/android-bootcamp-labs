@@ -98,6 +98,7 @@ public class PostStatusUpdate extends Activity {
             @Override
             protected Void doInBackground(Void... params) {
                 YambaClient yc = new YambaClient("student", "password");
+                yc.postStatus("Hello world!");
                 return null;
             }
         }.execute();
