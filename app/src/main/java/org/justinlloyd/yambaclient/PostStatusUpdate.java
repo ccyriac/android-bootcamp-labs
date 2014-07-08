@@ -1,6 +1,7 @@
 package org.justinlloyd.yambaclient;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -133,6 +134,7 @@ public class PostStatusUpdate extends Activity {
     private class PostStatusTask extends AsyncTask<String, Void, Void> {
 
         private final Activity context;
+        private ProgressDialog progress;
 
         public PostStatusTask(Activity context) {
             this.context = context;
