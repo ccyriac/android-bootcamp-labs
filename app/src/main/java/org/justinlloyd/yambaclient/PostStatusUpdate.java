@@ -90,7 +90,7 @@ public class PostStatusUpdate extends Activity {
             return;
         }
 
-        postStatusMessageBackgroundThread(statusMessage);
+        postStatusMessageAsyncTask(statusMessage);
     }
 
     private void postStatusMessageAsyncTask(String statusMessage) {
