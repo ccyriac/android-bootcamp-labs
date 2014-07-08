@@ -94,7 +94,8 @@ public class PostStatusUpdate extends Activity {
     }
 
     private void postStatusMessageAsyncTask(String statusMessage) {
-        new PostStatusTask().execute(statusMessage);
+        PostStatusTask postTask = new PostStatusTask();
+        postTask.execute(statusMessage);
     }
 
     private void postStatusMessageBackgroundThread(final String statusMessage) {
@@ -135,7 +136,7 @@ public class PostStatusUpdate extends Activity {
             YambaClient yc = new YambaClient("student", "password");
             try {
                 long startTime = System.currentTimeMillis();
-                yc.postStatus("Hello world!");
+                yc.postStatus(params[0]);
                 long endTime = System.currentTimeMillis();
                 final long totalTime = endTime - startTime;
                 Log.d(TAG, String.format("Posted the status message in %d ms", totalTime));
