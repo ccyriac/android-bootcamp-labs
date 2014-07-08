@@ -150,6 +150,10 @@ public class PostStatusUpdate extends Activity {
             }
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Void result) {
+        }
     }
 
     private class StatusMessageWatcher implements TextWatcher {
