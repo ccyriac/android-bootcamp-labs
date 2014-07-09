@@ -131,7 +131,7 @@ public class PostStatusUpdate extends Activity {
         };
     }
 
-    private class PostStatusTask extends AsyncTask<String, Void, Void> {
+    private class PostStatusTask extends AsyncTask<String, Void, Long> {
 
         private final Activity context;
         private ProgressDialog progress;
@@ -150,7 +150,7 @@ public class PostStatusUpdate extends Activity {
         }
 
         @Override
-        protected Void doInBackground(String... params) {
+        protected Long doInBackground(String... params) {
             YambaClient yc = new YambaClient("student", "password");
             try {
                 long startTime = System.currentTimeMillis();
@@ -166,7 +166,7 @@ public class PostStatusUpdate extends Activity {
 
         // runs on the UI thread after doInBackground has finished
         @Override
-        protected void onPostExecute(Void result) {
+        protected void onPostExecute(Long result) {
             super.onPostExecute(result);
             Log.d(PostStatusTask.class.getName(), "onPostExecute");
             progress.dismiss();
