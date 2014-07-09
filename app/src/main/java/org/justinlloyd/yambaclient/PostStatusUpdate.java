@@ -158,11 +158,11 @@ public class PostStatusUpdate extends Activity {
                 long endTime = System.currentTimeMillis();
                 final long totalTime = endTime - startTime;
                 Log.d(TAG, String.format("Posted the status message in %d ms", totalTime));
+                return 0L;
             } catch (YambaClientException e) {
                 Log.d(TAG, e.toString());
                 return -1L;
             }
-            return null;
         }
 
         // runs on the UI thread after doInBackground has finished
