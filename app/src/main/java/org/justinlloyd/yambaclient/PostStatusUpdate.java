@@ -160,6 +160,7 @@ public class PostStatusUpdate extends Activity {
                 Log.d(TAG, String.format("Posted the status message in %d ms", totalTime));
             } catch (YambaClientException e) {
                 Log.d(TAG, e.toString());
+                return -1L;
             }
             return null;
         }
