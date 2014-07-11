@@ -173,6 +173,12 @@ public class PostStatusUpdate extends Activity {
             progress.dismiss();
             if (context != null && result != null) {
                 Log.d(TAG, String.format("Post message async task completed with result code: %d", result));
+                if (result == 0L) {
+                    Toast.makeText(PostStatusUpdate.this, "Successfully posted your status update.", Toast.LENGTH_SHORT).show();
+
+                } else if (result == -1L) {
+                    Toast.makeText(PostStatusUpdate.this, "Failed to post to the remote server.", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
