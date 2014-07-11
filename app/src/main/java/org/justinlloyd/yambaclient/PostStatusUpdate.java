@@ -171,6 +171,9 @@ public class PostStatusUpdate extends Activity {
             super.onPostExecute(result);
             Log.d(PostStatusTask.class.getName(), "onPostExecute");
             progress.dismiss();
+            if (context != null && result != null) {
+                Log.d(TAG, String.format("Post message async task completed with result code: %d", result));
+            }
         }
     }
 
