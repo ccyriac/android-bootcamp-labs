@@ -133,6 +133,8 @@ public class PostStatusUpdate extends Activity {
 
     private class PostStatusTask extends AsyncTask<String, Void, Long> {
 
+        public static final long POST_SUCCESS = 0L;
+        public static final long POST_FAILED = -1L;
         private final Activity context;
         private ProgressDialog progress;
 
@@ -158,10 +160,10 @@ public class PostStatusUpdate extends Activity {
                 long endTime = System.currentTimeMillis();
                 final long totalTime = endTime - startTime;
                 Log.d(TAG, String.format("Posted the status message in %d ms", totalTime));
-                return 0L;
+                return POST_SUCCESS;
             } catch (YambaClientException e) {
                 Log.d(TAG, e.toString());
-                return -1L;
+                return POST_FAILED;
             }
         }
 
@@ -173,10 +175,10 @@ public class PostStatusUpdate extends Activity {
             progress.dismiss();
             if (context != null && result != null) {
                 Log.d(TAG, String.format("Post message async task completed with result code: %d", result));
-                if (result == 0L) {
+                if (result == POST_SUCCESS) {
                     Toast.makeText(PostStatusUpdate.this, "Successfully posted your status update.", Toast.LENGTH_SHORT).show();
 
-                } else if (result == -1L) {
+                } else if (result == POST_FAILED) {
                     Toast.makeText(PostStatusUpdate.this, "Failed to post to the remote server.", Toast.LENGTH_SHORT).show();
                 }
             }
