@@ -30,6 +30,7 @@ public class PostStatusUpdate extends Activity {
     private TextView textViewRemainingCharacters;
     private int maximumCharacters;
     private Button buttonPostStatus;
+    private PostStatusTask postTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +96,7 @@ public class PostStatusUpdate extends Activity {
     }
 
     private void postStatusMessageAsyncTask(String statusMessage) {
-        PostStatusTask postTask = new PostStatusTask(this);
+        postTask = new PostStatusTask(this);
         postTask.execute(statusMessage);
     }
 
@@ -177,7 +178,6 @@ public class PostStatusUpdate extends Activity {
                 Log.d(TAG, String.format("Post message async task completed with result code: %d", result));
                 if (result == POST_SUCCESS) {
                     Toast.makeText(PostStatusUpdate.this, "Successfully posted your status update.", Toast.LENGTH_SHORT).show();
-
                 } else if (result == POST_FAILED) {
                     Toast.makeText(PostStatusUpdate.this, "Failed to post to the remote server.", Toast.LENGTH_SHORT).show();
                 }
