@@ -4,4 +4,9 @@
         android:key="username"
         android:summary="Enter the username"
         android:title="Username" />
+    <EditTextPreference
+        android:inputType="textPassword"
+        android:key="password"
+        android:summary="Enter the password"
+        android:title="Password" />
 </PreferenceScreen>
