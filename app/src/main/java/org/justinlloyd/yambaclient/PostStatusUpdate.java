@@ -72,6 +72,9 @@ public class PostStatusUpdate extends Activity {
     @Override
     public void onStop() {
         super.onStop();
+        if (postTask != null) {
+            postTask.cancel(true);
+        }
     }
 
     public void buttonPostStatus(@SuppressWarnings("UnusedParameters") View v) {
