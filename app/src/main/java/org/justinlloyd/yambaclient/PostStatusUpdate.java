@@ -69,6 +69,11 @@ public class PostStatusUpdate extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
     public void buttonPostStatus(@SuppressWarnings("UnusedParameters") View v) {
         Log.d(TAG, "Clicked the Post Status button");
         String statusMessage = editTextStatusMessage.getText().toString();
