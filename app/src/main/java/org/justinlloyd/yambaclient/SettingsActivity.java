@@ -27,6 +27,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-
+        // TODO broadcast an intent to anybody that needs to know about updated shared preferences
     }
 }
