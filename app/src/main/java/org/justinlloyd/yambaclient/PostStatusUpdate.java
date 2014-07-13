@@ -146,6 +146,7 @@ public class PostStatusUpdate extends Activity {
         public static final long POST_SUCCESS = 0L;
         public static final long POST_FAILED = -1L;
         public static final long POST_FAILED_USERNAME_EMPTY = -2L;
+        public static final long POST_FAILED_PASSWORD_EMPTY = -3L;
         private final Activity context;
         private ProgressDialog progress;
 
@@ -176,9 +177,9 @@ public class PostStatusUpdate extends Activity {
             Log.d(TAG, String.format("Password is set to: \"%s\"", password));
             if (password.isEmpty()) {
                 Log.e(TAG, "Password preference is empty, cannot post to server.");
-                return POST_FAILED;
+                return POST_FAILED_PASSWORD_EMPTY;
             }
-            
+
             try {
                 long startTime = System.currentTimeMillis();
                 yc.postStatus(params[0]);
