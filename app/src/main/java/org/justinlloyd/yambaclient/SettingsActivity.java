@@ -22,6 +22,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     @Override
     public void onStop() {
         super.onStop();
+        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this);
     }
 
     @Override
