@@ -8,6 +8,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -163,7 +164,7 @@ public class PostStatusUpdate extends Activity {
         @Override
         protected Long doInBackground(String... params) {
             YambaClient yc = new YambaClient("student", "password");
-            String username = context.getPreferences(MODE_PRIVATE).getString("username", "student");
+            String username = PreferenceManager.getDefaultSharedPreferences(context).getString("username", "student");
             try {
                 long startTime = System.currentTimeMillis();
                 yc.postStatus(params[0]);
