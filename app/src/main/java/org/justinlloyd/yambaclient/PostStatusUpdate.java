@@ -163,6 +163,7 @@ public class PostStatusUpdate extends Activity {
         @Override
         protected Long doInBackground(String... params) {
             YambaClient yc = new YambaClient("student", "password");
+            String username = context.getPreferences(MODE_PRIVATE).getString("username", "student");
             try {
                 long startTime = System.currentTimeMillis();
                 yc.postStatus(params[0]);
