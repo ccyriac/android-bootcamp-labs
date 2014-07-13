@@ -9,4 +9,9 @@
         android:key="password"
         android:summary="Enter the password"
         android:title="Password" />
+    <EditTextPreference
+        android:inputType="number"
+        android:key="refresh_interval"
+        android:summary="Server refresh interval in seconds"
+        android:title="Refresh Interval" />
 </PreferenceScreen>
