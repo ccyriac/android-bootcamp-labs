@@ -172,8 +172,13 @@ public class PostStatusUpdate extends Activity {
             }
 
             Log.d(TAG, String.format("Username is set to: \"%s\"", username));
-            String password = PreferenceManager.getDefaultSharedPreferences(context).getString("password", "password");
+            String password = PreferenceManager.getDefaultSharedPreferences(context).getString("password", "");
             Log.d(TAG, String.format("Password is set to: \"%s\"", password));
+            if (password.isEmpty()) {
+                Log.e(TAG, "Password preference is empty, cannot post to server.");
+                return POST_FAILED;
+            }
+            
             try {
                 long startTime = System.currentTimeMillis();
                 yc.postStatus(params[0]);
