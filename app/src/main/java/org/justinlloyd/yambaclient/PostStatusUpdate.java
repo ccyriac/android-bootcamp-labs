@@ -166,6 +166,8 @@ public class PostStatusUpdate extends Activity {
             YambaClient yc = new YambaClient("student", "password");
             String username = PreferenceManager.getDefaultSharedPreferences(context).getString("username", "student");
             Log.d(TAG, String.format("Username is set to: \"%s\"", username));
+            String password = PreferenceManager.getDefaultSharedPreferences(context).getString("password", "password");
+            Log.d(TAG, String.format("Password is set to: \"%s\"", password));
             try {
                 long startTime = System.currentTimeMillis();
                 yc.postStatus(params[0]);
