@@ -207,6 +207,8 @@ public class PostStatusUpdate extends Activity {
                     Toast.makeText(PostStatusUpdate.this, "Failed to post to the remote server.", Toast.LENGTH_SHORT).show();
                 } else if (result == POST_FAILED_USERNAME_EMPTY) {
                     Toast.makeText(PostStatusUpdate.this, "", Toast.LENGTH_SHORT).show();
+                } else if (result == POST_FAILED_PASSWORD_EMPTY) {
+                    Toast.makeText(PostStatusUpdate.this, "", Toast.LENGTH_SHORT).show();
                 }
             }
         }
