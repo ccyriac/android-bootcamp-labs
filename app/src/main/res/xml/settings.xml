@@ -14,4 +14,9 @@
         android:key="refresh_interval"
         android:summary="Server refresh interval in seconds"
         android:title="Refresh Interval" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="server_uri"
+        android:summary="Server URI"
+        android:title="Server" />
 </PreferenceScreen>
