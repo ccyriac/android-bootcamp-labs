@@ -145,6 +145,7 @@ public class PostStatusUpdate extends Activity {
 
         public static final long POST_SUCCESS = 0L;
         public static final long POST_FAILED = -1L;
+        public static final long POST_FAILED_USERNAME_EMPTY = -2L;
         private final Activity context;
         private ProgressDialog progress;
 
@@ -167,7 +168,7 @@ public class PostStatusUpdate extends Activity {
             String username = PreferenceManager.getDefaultSharedPreferences(context).getString("username", "");
             if (username.isEmpty()) {
                 Log.e(TAG, "Username preference is empty, cannot post to server.");
-                return POST_FAILED;
+                return POST_FAILED_USERNAME_EMPTY;
             }
 
             Log.d(TAG, String.format("Username is set to: \"%s\"", username));
