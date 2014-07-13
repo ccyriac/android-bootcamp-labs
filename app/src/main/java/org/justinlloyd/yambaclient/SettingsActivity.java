@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 
 public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
     @Override
@@ -15,6 +16,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     @Override
     public void onStart() {
         super.onStart();
+        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
