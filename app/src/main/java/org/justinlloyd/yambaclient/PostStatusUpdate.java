@@ -166,6 +166,8 @@ public class PostStatusUpdate extends Activity {
             YambaClient yc = new YambaClient("student", "password");
             String username = PreferenceManager.getDefaultSharedPreferences(context).getString("username", "");
             if (username.isEmpty()) {
+                Log.e(TAG, "Username preference is empty, cannot post to server.");
+                return POST_FAILED;
             }
 
             Log.d(TAG, String.format("Username is set to: \"%s\"", username));
