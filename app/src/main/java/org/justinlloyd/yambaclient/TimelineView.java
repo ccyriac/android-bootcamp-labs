@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import org.justinlloyd.yambaclient.R;
+import android.view.View;
 
 public class TimelineView extends Activity {
 
@@ -32,5 +32,9 @@ public class TimelineView extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void buttonRefreshTimeline(View v) {
+
     }
 }
