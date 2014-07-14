@@ -7,7 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class TimelineView extends Activity {
-
+    private final static String TAG = TimelineView.class.getName();
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,5 @@ public class TimelineView extends Activity {
     }
 
     public void buttonRefreshTimeline(View v) {
-
     }
 }
