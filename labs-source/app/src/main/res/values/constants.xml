@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="errorColor">@android:color/holo_red_dark</color>
-    <color name="warningColor">#FF0</color>
-    <integer name="maximumCharacters">140</integer>
-    <integer name="warningMessageLength">20</integer>
-    <color name="warningMessageLengthColor">@color/warningColor</color>
-    <color name="errorMessageLengthColor">@color/errorColor</color>
-</resources>
